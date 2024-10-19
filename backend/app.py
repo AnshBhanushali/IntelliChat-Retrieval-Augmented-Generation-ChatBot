@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from config import Config
