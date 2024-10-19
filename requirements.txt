@@ -1,0 +1,11 @@
+Flask
+Flask_SQLAlchemy
+Werkzeug
+flask-cors
+sentence-transformers
+numpy
+faiss-cpu
+transformers
+openai
+python-dotenv
+passlib
