@@ -1,5 +1,3 @@
-# utils.py
-
 import os
 import numpy as np
 import faiss
@@ -8,7 +6,6 @@ import logging
 from sentence_transformers import SentenceTransformer
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
