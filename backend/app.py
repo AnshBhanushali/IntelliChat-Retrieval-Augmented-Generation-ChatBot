@@ -6,6 +6,9 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = SECRETKEY
-app.config['SQLALCHEMY_DATABASE_URI'] = SQL_URL
+app.config['SECRET_KEY'] = os.getenv('SECRETKEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQL_URL')
+app.config['DEBUG'] = os.getenv('DEBUG', 'False') == 'True'
+app.config['PORT'] = int(os.getenv('PORT', 5000))
+
 CORS(app)
