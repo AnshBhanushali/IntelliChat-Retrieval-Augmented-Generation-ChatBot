@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 CORS(app)
-db.init_app(app)
 
 
 logging.basicConfig(level=logging.INFO)
@@ -118,6 +117,4 @@ def internal_error(error):
     return jsonify({'message': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=app.config['DEBUG'], port=app.config['PORT'])

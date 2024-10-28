@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 module.exports = {
@@ -10,12 +9,13 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    static: path.join(__dirname, '../public'),
-    historyApiFallback: true,
-    port: 3000,
     proxy: {
-      '/api': 'http://localhost:5000',
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
     },
+    // other devServer options if any
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -25,12 +25,19 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)?$/,
-        loader: 'ts-loader',
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.module\.scss$/,
-        use: ['style-loader', { loader: 'css-loader', options: { modules: true } }, 'sass-loader'],
+        use: [
+          'style-loader',
+          { 
+            loader: 'css-loader',
+            options: { modules: true },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.scss$/,

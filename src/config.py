@@ -12,7 +12,6 @@ class Config:
     DEBUG = os.getenv('DEBUG', 'False').lower() in ['true', '1', 't']
     PORT = int(os.getenv('PORT', 5000))
 
-    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
