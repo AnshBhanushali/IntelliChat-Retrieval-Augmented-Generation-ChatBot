@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
-from src.config import Config
-from src.models import db, User
-from src.utils import EmbeddingEngine, VectorStore, LanguageModel
+from config import Config
+from models import db, User
+from utils import EmbeddingEngine, VectorStore, LanguageModel
 import logging
 import os
 
