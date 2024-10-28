@@ -1,0 +1,33 @@
+/* src/components/Navbar/NavbarStyles.module.scss */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+  }
+  
+  .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  
+    li a {
+      color: #fff;
+      font-size: 1rem;
+    }
+  
+    .logoutButton {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+    }
+  }
+  
